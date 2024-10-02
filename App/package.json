@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "node-sass": "^7.0.0"
+  },
+  "scripts": {
+    "sass": "node-sass src/main/webapp/WEB-INF/scss -o src/main/webapp/css"
+  }
+}

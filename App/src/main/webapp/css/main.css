@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #F1F2F6; }
+
+.high-bar {
+  width: 100vw;
+  height: 2rem;
+  background-color: #fddf37;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .high-bar ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    gap: 1em; }
+    .high-bar ul li a {
+      text-decoration: none;
+      color: #30435C;
+      font-size: .75rem; }
+
+.lang {
+  padding: 1rem 0;
+  width: 75%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: .5rem; }
+  .lang div {
+    border: solid;
+    width: 0em;
+    height: 1em;
+    border-width: 1px; }
+  .lang a {
+    text-decoration: none;
+    color: #30435C;
+    font-size: 0.75rem; }
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #ffff; }
+  .nav-bar img {
+    width: 8rem; }
+  .nav-bar nav a {
+    text-decoration: none;
+    color: #30435C;
+    font-weight: 600;
+    font-size: .875rem;
+    margin: 0 .80rem; }
+  .nav-bar div {
+    background-color: #02AFBC;
+    padding: 1rem; }
+    .nav-bar div:hover {
+      background-color: #028c96; }
+    .nav-bar div a {
+      color: #ffff;
+      font-size: .875rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      flex-direction: column; }
+      .nav-bar div a svg {
+        width: 2rem;
+        height: 2rem;
+        display: block; }
+
+.main-title {
+  text-align: center; }
+
+.main-container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+main .recap {
+  width: 25%; }
+
+main .container {
+  width: 75%;
+  background-color: #ffff; }
+  main .container form {
+    width: 80%;
+    margin: auto; }
