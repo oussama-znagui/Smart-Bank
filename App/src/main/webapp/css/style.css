@@ -1,0 +1,30 @@
+.main-container{
+    gap: 2rem;
+}
+.recap{
+    height: 25rem;
+}
+#racaptable{
+    margin-bottom: .875rem;
+    width: 100%;
+    max-width: 100%;
+    ackground-color: rgba(0, 0, 0, 0);
+    border-collapse: collapse;
+}
+#racaptable thead tr td{
+    background-color: #F1F2F6;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #30435C;
+
+}
+
+
+#racaptable tbody tr td{
+
+
+    font-weight: 500;
+    color: #02AFBC !important;
+
+}
+

@@ -4,8 +4,10 @@
 <head>
     <title>JSP - Hello World</title>
     <style><%@include file="/css/main.css"%></style>
+    <style><%@include file="/css/style.css"%></style>
     <script><%@include file="WEB-INF/js/main.js" %></script>
     <script><%@include file="WEB-INF/js/navigation.js" %></script>
+    <script><%@include file="WEB-INF/js/recap.js" %></script>
 
 </head>
 <body>
@@ -100,7 +102,7 @@
 
                     <div>
                         <label>Mon projet</label>
-                        <select>
+                        <select id="project">
                             <option>J'ai besoin d'argent</option>
                             <option>J'ai besoin d'argent</option>
                             <option>J'ai besoin d'argent</option>
@@ -108,9 +110,9 @@
                         </select>
                     </div>
 
-                    <div>
+                    <div >
                         <label>Je suis</label>
-                        <select>
+                        <select id="pro">
                             <option>Artisan</option>
                             <option>Artisan</option>
                             <option>JArtisan</option>
@@ -193,19 +195,21 @@
             <h1> Mon récapitulatif</h1>
             <table id="racaptable">
                 <thead>
-                <tr>
+                <td>
                     Mon projet
-                </tr>
+                </td>
                 </thead>
+
                 <tbody>
-                <tr>
+
                     <td>
                         Prêt Personnel
                     </td>
-                </tr>
+
                 </tbody>
 
             </table>
+
         </div>
     </div>
 
