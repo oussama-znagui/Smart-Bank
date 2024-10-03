@@ -85,12 +85,12 @@
                     <h3>Simuler mon credit</h3>
                 </div>
                 <div>
-                    <h1>1</h1>
-                    <h3>Simuler mon credit</h3>
+                    <h1>2</h1>
+                    <h3>Mes coordonnées</h3>
                 </div>
                 <div>
-                    <h1>1</h1>
-                    <h3>Simuler mon credit</h3>
+                    <h1>3</h1>
+                    <h3>Mes infos personnelles</h3>
                 </div>
             </div>
             <form>

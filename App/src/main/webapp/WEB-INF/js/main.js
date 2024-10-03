@@ -7,11 +7,11 @@
 document.addEventListener("DOMContentLoaded", function() {
 
     displayForm()
+
     const amount = document.getElementById("amount")
     const amountRang = document.getElementById("amount-rang")
     const duration = document.getElementById("duration")
     const durationRang = document.getElementById("duration-rang")
-
     const monthlyRang = document.getElementById("monthly-rang")
     const monthly = document.getElementById("monthly")
 
@@ -23,13 +23,17 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("amount --> " + amount.value)
       amount.value = amountRang.value
       let m =  calculateMountly(amountRang.value,durationRang.value)
-        monthlyRang.setAttribute("min", calculateMinMountly(m))
-        monthlyRang.setAttribute("max",calculateMaxMountly(m))
-        console.log(calculateMaxMountly(m) + "-to-" + calculateMinMountly(m))
 
-        monthlyRang.value = m
-        monthly.value = monthlyRang.value
-        console.log("------------>" + monthlyRang.value + "//" +monthly.value)
+        monthlyRang.setAttribute("min", calculateMinMountly(amountRang.value))
+
+        monthlyRang.setAttribute("max",calculateMaxMountly(amountRang.value))
+
+        monthly.setAttribute("value",m)
+        monthly.value = m
+
+
+
+
     });
 
 
@@ -39,11 +43,21 @@ document.addEventListener("DOMContentLoaded", function() {
         let m =  calculateMountly(amountRang.value,durationRang.value)
         monthlyRang.value = m
         monthly.value = m
+
     })
 
 
     monthlyRang.addEventListener("change",(event) => {
+        monthly.setAttribute("value",monthlyRang.value)
         monthly.value = monthlyRang.value
+        let dur = calculateDuration(amount.value,monthly.value)
+        duration.setAttribute("value",dur)
+        durationRang.setAttribute("value",dur)
+        duration.value = dur
+        durationRang.value = dur
+
+
+
     })
 
     monthly.addEventListener("change",(event) =>{
@@ -55,7 +69,11 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+//Mountly ----------------------------------------------------------
+
+
 function calculateMountly(amount,duration){
+
 
     let a1 = amount * (0.1 / 12)
     console.log(a1)
@@ -70,13 +88,24 @@ function calculateMountly(amount,duration){
 }
 
 function calculateMinMountly(amount){
-    return  calculateMountly(amount,12)
+    return  calculateMountly(amount,120)
 }
 
 function calculateMaxMountly(amount){
-    return calculateMountly(amount,120)
+    return calculateMountly(amount,12)
 }
 
+//duration
+function calculateDuration(amount,mountly){
+    console.log("fromcalculateDuration ---------> " + amount)
+    console.log("fromcalculateDuration ---------> " + mountly)
+    let p1 = Math.log(1-((amount*(0.1/12))/mountly))
+    let p2 =  Math.log(1+(0.1/12))
+    let dur = Math.round(p1/-p2)
+    return dur
+}
+
+//displat form ----------------------------------------------------------------------
 
 function displayForm(){
     const p1 = document.getElementById("p1")
@@ -98,11 +127,6 @@ function displayForm(){
         p3.style.display = "block"
 
     })
-
-
-
-
-
 }
 
 
