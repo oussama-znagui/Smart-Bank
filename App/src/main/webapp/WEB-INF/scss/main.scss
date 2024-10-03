@@ -154,7 +154,8 @@ body {
 
   width: 80%;
   margin: auto;
-  @include center;
+  display: flex;
+  justify-content: center;
 }
 
 main{
@@ -162,6 +163,16 @@ main{
 
   .recap{
     width: 25%;
+    background-color: $blanc;
+    padding: 1.0625rem .3125rem;
+
+    h1{
+      text-align: center;
+      color: $textC;
+      margin-bottom: 1.25rem;
+      font-size: 1.5rem;
+    }
+
 
   }
 
@@ -195,7 +206,7 @@ main{
       }
       h3{
         margin: 0 !important;
-        font-weight: 200;
+        font-weight: 400;
         font-size: 1rem;
 
       }
@@ -205,6 +216,8 @@ main{
    form{
      width: 80%;
      margin: auto;
+     margin-bottom: 1rem;
+     margin-top: 1rem;
      label{
        font-weight: bold;
        font-size: .875rem;
@@ -356,3 +369,53 @@ $font-family_1: inherit;
   pointer-events: none;
 }
 
+
+// ----------------------------------------------------------------------------
+
+.inprogress{
+  background-color: $color2;
+  height: 5.5rem;
+
+}
+
+.complited{
+  background-color: $bleu;
+  height: 5.5rem;
+}
+
+.leg{
+  background-color: lightgray;
+  padding: 1rem 2rem;
+  p{
+    font-size: .75rem;
+    font-weight: 300;
+    color: #30435C;
+
+  }
+}
+
+.racaptable{
+  margin-bottom: .875rem;
+  width: 100%;
+  max-width: 100%;
+  ackground-color: rgba(0, 0, 0, 0);
+  border-collapse: collapse;
+
+  thead{
+    tr{
+      background-color: #b8e9ec;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #30435C;
+      border-top: 0;
+      padding: .3125rem .4375rem;
+    }
+
+    tbody{
+
+      border-top: 0;
+      padding: .3125rem .4375rem;
+      color: #02AFBC !important;
+    }
+  }
+}

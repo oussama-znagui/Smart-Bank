@@ -5,6 +5,7 @@
     <title>JSP - Hello World</title>
     <style><%@include file="/css/main.css"%></style>
     <script><%@include file="WEB-INF/js/main.js" %></script>
+    <script><%@include file="WEB-INF/js/navigation.js" %></script>
 
 </head>
 <body>
@@ -80,15 +81,15 @@
 
         <div class="container">
             <div class="progress">
-                <div>
+                <div id="step1" class="">
                     <h1>1</h1>
                     <h3>Simuler mon credit</h3>
                 </div>
-                <div>
+                <div id="step2" class="">
                     <h1>2</h1>
                     <h3>Mes coordonnées</h3>
                 </div>
-                <div>
+                <div id="step3">
                     <h1>3</h1>
                     <h3>Mes infos personnelles</h3>
                 </div>
@@ -177,11 +178,34 @@
                 </div>
             </form>
 
+            <div class="leg">
+            <p>
+                Simulation à titre indicatif et non contractuelle. La mensualité minimale est de 180 dirhams. Un client Wafasalaf peut bénéficier d'une tarification plus avantageuse en fonction de ses conditions préférentielles.
+                <br> <br>
+
+                Conformément à la loi 09-08, vous disposez d’un droit d’accès, de rectification et d’opposition au traitement de vos données personnelles. Ce traitement est autorisé par la CNDP sous le numéro A-GC-206/2014.
+            </p></div>
+
 
         </div>
 
         <div class="recap">
             <h1> Mon récapitulatif</h1>
+            <table id="racaptable">
+                <thead>
+                <tr>
+                    Mon projet
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        Prêt Personnel
+                    </td>
+                </tr>
+                </tbody>
+
+            </table>
         </div>
     </div>
 
