@@ -4,6 +4,7 @@
 <head>
     <title>JSP - Hello World</title>
     <style><%@include file="/css/main.css"%></style>
+    <script><%@include file="WEB-INF/js/main.js" %></script>
 
 </head>
 <body>
@@ -78,11 +79,26 @@
 
 
         <div class="container">
+            <div class="progress">
+                <div>
+                    <h1>1</h1>
+                    <h3>Simuler mon credit</h3>
+                </div>
+                <div>
+                    <h1>1</h1>
+                    <h3>Simuler mon credit</h3>
+                </div>
+                <div>
+                    <h1>1</h1>
+                    <h3>Simuler mon credit</h3>
+                </div>
+            </div>
             <form>
 
-                <div class="p1">
-                    <label>Mon projet</label>
+                <div class="p1" id="p1">
+
                     <div>
+                        <label>Mon projet</label>
                         <select>
                             <option>J'ai besoin d'argent</option>
                             <option>J'ai besoin d'argent</option>
@@ -90,8 +106,9 @@
                             <option>J'ai besoin d'argent</option>
                         </select>
                     </div>
-                    <label>Je suis</label>
+
                     <div>
+                        <label>Je suis</label>
                         <select>
                             <option>Artisan</option>
                             <option>Artisan</option>
@@ -99,27 +116,63 @@
                             <option>JArtisan</option>
                         </select>
                     </div>
-                    <div>
+                    <div class="rang-div">
                         <label>Montant (en DH)</label>
                         <input type="number" id="amount" max="600000" min="5000" value="">
-                        <input type="range" step="1000" id="amout-rang" max="600000" min="5000" value="">
+                        <input type="range" step="1000" id="amount-rang" max="600000" min="5000" value="">
                     </div>
-                    <div>
+                    <div class="rang-div">
                         <label>Durée (en mois)</label>
-                        <input type="number" id="Duration">
-                        <input type="range" id="Duration-rang">
+                        <input type="number" id="duration">
+                        <input type="range" min="12" max="120" step="6" value="" id="duration-rang">
                     </div>
-                    <div>
+                    <div class="rang-div">
                         <label>Mensualités (en DH)</label>
-                        <input type="number" id="Monthly">
-                        <input type="range" id="Monthly-rang">
+                        <input type="number" id="monthly" value="">
+                        <input type="range" value="" id="monthly-rang" step="any">
                     </div>
-                    <button id="toStep2">
-                        Continuer
-                        <span>sans engagement</span>
-                    </button>
+                    <div class="bt">
+                        <button id="toStep2">
+                            Continuer <br>
+                            <span>sans engagement</span>
+                        </button>
+                    </div>
 
 
+               </div>
+                <div class="p2" id="p2">
+                    <div class="form__group field">
+                        <input type="email" class="form__field" placeholder="email" required="">
+                        <label class="form__label">Name</label>
+                    </div>
+                    <div class="form__group field">
+                        <input type="tel" class="form__field" placeholder="Name" required="">
+                        <label  class="form__label"> Téléphone mobile*</label>
+                    </div>
+                    <div class="bt">
+                        <button id="toStep3">
+                            Continuer <br>
+                            <span>sans engagement</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p3" id="p3">
+                    <div>
+                        <div class="form__group field">
+                            <input type="email" class="form__field" placeholder="email" required="">
+                            <label class="form__label">Name</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="email" class="form__field" placeholder="email" required="">
+                            <label class="form__label">Name</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="email" class="form__field" placeholder="email" required="">
+                            <label class="form__label">Name</label>
+                        </div>
+
+                    </div>
 
                 </div>
             </form>

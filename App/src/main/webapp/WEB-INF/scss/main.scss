@@ -15,6 +15,36 @@ $blanc : #ffff;
   justify-content: center;
 }
 
+@mixin  inputM{
+
+  border: .0625rem solid #9B9B9B;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.625rem 1.5rem 0.625rem 0.625rem;
+  cursor: pointer;
+  background-color: $blanc;
+  width: 100%;
+}
+
+@mixin toNextStepButton{
+  border-color: $blanc;
+  text-align: center;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,0.2);
+  color: $blanc;
+  background-color: $bleu;
+  font-weight: 500;
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .6875rem 1.25rem .625rem;
+  font-size: 1rem ;
+  span{
+    font-weight: 200;
+    font-size: .875rem;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -136,12 +166,193 @@ main{
   }
 
   .container{
-    width: 75%;
+    width: 55%;
     background-color: $blanc;
+
+
+
+    .progress{
+     @include center;
+      text-align: center;
+      background-color: gray;
+      margin-bottom: 2rem;
+      div{
+        height: 5.3125rem;
+        width: 33%;
+        border: solid;
+        border-width: 2px;
+        border-color: $blanc;
+        @include center;
+        flex-direction: column;
+
+      }
+      h1{
+        margin: 0 !important;
+        font-weight: 500;
+        font-size: 2rem;
+        color: $textC;
+
+      }
+      h3{
+        margin: 0 !important;
+        font-weight: 200;
+        font-size: 1rem;
+
+      }
+    }
+
+
    form{
      width: 80%;
      margin: auto;
+     label{
+       font-weight: bold;
+       font-size: .875rem;
+       color: $textC;
+     }
+
+     select{
+      @include inputM;
+     }
+
+     [type="number"]{
+       max-width: 5.75rem;
+       text-align: left;
+       font-size: 1.5rem;
+       color: $bleu;
+       transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+       @include inputM;
+     }
+
+     [type="rang"]{
+       border: none;
+       margin: 0.625rem 0 0;
+       padding: 0.3125rem 0;
+       width: 100%;
+       display: block;
+       transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+       @include inputM;
+     }
+
+     [type="email"]{
+
+       text-align: left;
+       font-size: 1.5rem;
+       color: $bleu;
+       transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+     }
+
+     [type="phone"]{
+
+       text-align: left;
+       font-size: 1.5rem;
+       color: $bleu;
+       transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+     }
+
+
+
+
 
    }
+
+    .rang-div{
+      display: flex;
+      flex-direction: column;
+
+      margin: 1rem 0;
+
+    }
   }
 }
+
+
+#toStep2{
+  @include toNextStepButton
+
+  }
+
+#toStep3 {
+  @include toNextStepButton
+
+}
+
+  .bt{
+  text-align: center;
+}
+
+
+//input
+
+
+$color_1: #fff;
+$color_2: transparent;
+$color_3: #9b9b9b;
+$color_4: #38caef;
+$font-family_1: inherit;
+
+/* reset input */
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+  margin: 1rem 0;
+}
+.form__field {
+  font-family: $font-family_1;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: $color_1;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  &::placeholder {
+    color: $color_2;
+  }
+  &:placeholder-shown {
+    ~ {
+      .form__label {
+        font-size: 17px;
+        cursor: text;
+        top: 20px;
+      }
+    }
+  }
+  &:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image-slice: 1;
+    ~ {
+      .form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 17px;
+        color: $color_4;
+        font-weight: 700;
+      }
+    }
+  }
+  &:required {
+    box-shadow: none;
+  }
+  &:invalid {
+    box-shadow: none;
+  }
+}
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: $color_3;
+  pointer-events: none;
+}
+

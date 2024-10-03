@@ -87,8 +87,177 @@ main .recap {
   width: 25%; }
 
 main .container {
-  width: 75%;
+  width: 55%;
   background-color: #ffff; }
+  main .container .progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: gray;
+    margin-bottom: 2rem; }
+    main .container .progress div {
+      height: 5.3125rem;
+      width: 33%;
+      border: solid;
+      border-width: 2px;
+      border-color: #ffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column; }
+    main .container .progress h1 {
+      margin: 0 !important;
+      font-weight: 500;
+      font-size: 2rem;
+      color: #30435C; }
+    main .container .progress h3 {
+      margin: 0 !important;
+      font-weight: 200;
+      font-size: 1rem; }
   main .container form {
     width: 80%;
     margin: auto; }
+    main .container form label {
+      font-weight: bold;
+      font-size: .875rem;
+      color: #30435C; }
+    main .container form select {
+      border: .0625rem solid #9B9B9B;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.625rem 1.5rem 0.625rem 0.625rem;
+      cursor: pointer;
+      background-color: #ffff;
+      width: 100%; }
+    main .container form [type="number"] {
+      max-width: 5.75rem;
+      text-align: left;
+      font-size: 1.5rem;
+      color: #02AFBC;
+      transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+      border: .0625rem solid #9B9B9B;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.625rem 1.5rem 0.625rem 0.625rem;
+      cursor: pointer;
+      background-color: #ffff;
+      width: 100%; }
+    main .container form [type="rang"] {
+      border: none;
+      margin: 0.625rem 0 0;
+      padding: 0.3125rem 0;
+      width: 100%;
+      display: block;
+      transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out;
+      border: .0625rem solid #9B9B9B;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.625rem 1.5rem 0.625rem 0.625rem;
+      cursor: pointer;
+      background-color: #ffff;
+      width: 100%; }
+    main .container form [type="email"] {
+      text-align: left;
+      font-size: 1.5rem;
+      color: #02AFBC;
+      transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out; }
+    main .container form [type="phone"] {
+      text-align: left;
+      font-size: 1.5rem;
+      color: #02AFBC;
+      transition: border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out; }
+  main .container .rang-div {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0; }
+
+#toStep2 {
+  border-color: #ffff;
+  text-align: center;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  color: #ffff;
+  background-color: #02AFBC;
+  font-weight: 500;
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .6875rem 1.25rem .625rem;
+  font-size: 1rem; }
+  #toStep2 span {
+    font-weight: 200;
+    font-size: .875rem; }
+
+#toStep3 {
+  border-color: #ffff;
+  text-align: center;
+  box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  color: #ffff;
+  background-color: #02AFBC;
+  font-weight: 500;
+  width: 35%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .6875rem 1.25rem .625rem;
+  font-size: 1rem; }
+  #toStep3 span {
+    font-weight: 200;
+    font-size: .875rem; }
+
+.bt {
+  text-align: center; }
+
+/* reset input */
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+  margin: 1rem 0; }
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s; }
+  .form__field::placeholder {
+    color: transparent; }
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px; }
+  .form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image-slice: 1; }
+    .form__field:focus ~ .form__label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.2s;
+      font-size: 17px;
+      color: #38caef;
+      font-weight: 700; }
+  .form__field:required {
+    box-shadow: none; }
+  .form__field:invalid {
+    box-shadow: none; }
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none; }
