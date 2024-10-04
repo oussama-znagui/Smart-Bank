@@ -1,9 +1,12 @@
 package ma.znagui.app.model;
 
-import java.time.LocalDateTime;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
+import java.time.LocalDateTime;
+@Entity
 public class Request {
-    private int id;
+    @Id private int id;
     private String project;
     private String pro;
     private double amount;
@@ -129,4 +132,5 @@ public class Request {
         this.currentCredits = currentCredits;
     }
 
+  
 }

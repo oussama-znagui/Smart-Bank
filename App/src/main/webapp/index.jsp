@@ -5,9 +5,6 @@
     <title>JSP - Hello World</title>
     <style><%@include file="/css/main.css"%></style>
     <style><%@include file="/css/style.css"%></style>
-    <script><%@include file="WEB-INF/js/main.js" %></script>
-    <script><%@include file="WEB-INF/js/navigation.js" %></script>
-    <script><%@include file="WEB-INF/js/recap.js" %></script>
 
 </head>
 <body>
@@ -123,7 +120,7 @@
                     <div class="rang-div">
                         <label>Montant (en DH)</label>
                         <input type="number" id="amount" name="amount" max="600000" min="5000"  >
-                        <input type="range" step="1000" id="amount-rang" max="600000" min="5000" value="">
+                        <input type="range" step="1000" id="amount-rang" max="600000" min="5000" >
                     </div>
                     <div class="rang-div">
                         <label>Durée (en mois)</label>
@@ -261,6 +258,12 @@
 
 </main>
 
+
+
+
+<script><%@include file="WEB-INF/js/main.js" %></script>
+<script><%@include file="WEB-INF/js/navigation.js" %></script>
+<script><%@include file="WEB-INF/js/recap.js" %></script>
 </body>
 
 </body>

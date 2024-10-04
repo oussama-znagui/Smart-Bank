@@ -17,11 +17,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-    amountRang.addEventListener("change", (event) => {
+    amountRang.addEventListener("input", (event) => {
 
         console.log("range value --> " + amountRang.value)
         console.log("amount --> " + amount.value)
+        amount.setAttribute("value",amountRang.value)
       amount.value = amountRang.value
+
       let m =  calculateMountly(amountRang.value,durationRang.value)
 
         monthlyRang.setAttribute("min", calculateMinMountly(amountRang.value))
