@@ -96,13 +96,14 @@
                     <h3>Mes infos personnelles</h3>
                 </div>
             </div>
-            <form>
+            <form action="${pageContext.request.contextPath}/demande" method="post">
+                <button type="submit" name="submit" >allo</button>
 
                 <div class="p1" id="p1">
 
                     <div>
                         <label>Mon projet</label>
-                        <select id="project">
+                        <select id="project" name="project">
                             <option>J'ai besoin d'argent</option>
                             <option>J'ai besoin d'argent</option>
                             <option>J'ai besoin d'argent</option>
@@ -112,7 +113,7 @@
 
                     <div >
                         <label>Je suis</label>
-                        <select id="pro">
+                        <select id="pro" name="pro">
                             <option>Artisan</option>
                             <option>Artisan</option>
                             <option>JArtisan</option>
@@ -121,21 +122,21 @@
                     </div>
                     <div class="rang-div">
                         <label>Montant (en DH)</label>
-                        <input type="number" id="amount" max="600000" min="5000" value="">
+                        <input type="number" id="amount" name="amount" max="600000" min="5000"  >
                         <input type="range" step="1000" id="amount-rang" max="600000" min="5000" value="">
                     </div>
                     <div class="rang-div">
                         <label>Durée (en mois)</label>
-                        <input type="number" id="duration">
+                        <input type="number" id="duration" name="duration">
                         <input type="range" min="12" max="120" step="6" value="" id="duration-rang">
                     </div>
                     <div class="rang-div">
                         <label>Mensualités (en DH)</label>
-                        <input type="number" id="monthly" value="">
-                        <input type="range" value="" id="monthly-rang" step="any">
+                        <input type="number" id="monthly" value="" name="monthly">
+                        <input type="range"  id="monthly-rang" step="any">
                     </div>
                     <div class="bt">
-                        <button id="toStep2">
+                        <button id="toStep2" type="button">
                             Continuer <br>
                             <span>sans engagement</span>
                         </button>
@@ -145,15 +146,15 @@
                </div>
                 <div class="p2" id="p2">
                     <div class="form__group field">
-                        <input type="email" class="form__field" placeholder="email" required="">
+                        <input type="email" name="email" class="form__field" placeholder="email" >
                         <label class="form__label">Name</label>
                     </div>
                     <div class="form__group field">
-                        <input type="tel" class="form__field" placeholder="Name" required="">
+                        <input type="tel" name="tel" class="form__field" placeholder="tel" >
                         <label  class="form__label"> Téléphone mobile*</label>
                     </div>
                     <div class="bt">
-                        <button id="toStep3">
+                        <button id="toStep3" type="button">
                             Continuer <br>
                             <span>sans engagement</span>
                         </button>
@@ -163,21 +164,56 @@
                 <div class="p3" id="p3">
                     <div>
                         <div class="form__group field">
-                            <input type="email" class="form__field" placeholder="email" required="">
-                            <label class="form__label">Name</label>
+                            <label class="form__label">Civilité</label>
+                            <input type="radio" name="civility" value="Madame">
+                            <label>
+                                Madame
+                            </label>
+                            <input type="radio" name="civility" value="Mademoiselle">
+                            <label>Mademoiselle
+                            </label>
+                            <input type="radio" name="civility" value="Monsieur">
+                            <label>Monsieur
+                            </label>
+
                         </div>
                         <div class="form__group field">
-                            <input type="email" class="form__field" placeholder="email" required="">
-                            <label class="form__label">Name</label>
+                            <input type="text" class="form__field" placeholder="Nom" name="lastName">
+                            <label class="form__label">Nom</label>
                         </div>
                         <div class="form__group field">
-                            <input type="email" class="form__field" placeholder="email" required="">
-                            <label class="form__label">Name</label>
+                            <input type="text" class="form__field" placeholder="Prenom" name="firstName">
+                            <label class="form__label">Prenom</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="text" class="form__field" placeholder="CIN" name="cin" >
+                            <label class="form__label">CIN</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="date" class="form__field" placeholder="Date de naissance" name="bdate" >
+                            <label class="form__label">Date de naissance</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="number" class="form__field" placeholder="Revenu" name="revenu" >
+                            <label class="form__label">Revenu</label>
+                        </div>
+                        <div class="form__group field">
+
+                            <label class="form__label">Avez vous des crédits en cours ?</label>
+                            <input name="credit" type="radio" class="form__field"  value="true">
+                            <label>oui</label>
+                            <input name="credit" type="radio" class="form__field"  value="false">
+                            <label>non</label>
+                        </div>
+                        <div >
+
+
                         </div>
 
                     </div>
 
                 </div>
+
             </form>
 
             <div class="leg">

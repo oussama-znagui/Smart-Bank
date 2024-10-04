@@ -232,7 +232,7 @@ main .container {
   border-bottom: 2px solid #9b9b9b;
   outline: 0;
   font-size: 17px;
-  color: #fff;
+  color: #30435C;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s; }
@@ -286,20 +286,15 @@ main .container {
     font-weight: 300;
     color: #30435C; }
 
-.racaptable {
-  margin-bottom: .875rem;
-  width: 100%;
-  max-width: 100%;
-  ackground-color: rgba(0, 0, 0, 0);
-  border-collapse: collapse; }
-  .racaptable thead tr {
-    background-color: #b8e9ec;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #30435C;
-    border-top: 0;
-    padding: .3125rem .4375rem; }
-  .racaptable thead tbody {
-    border-top: 0;
-    padding: .3125rem .4375rem;
-    color: #02AFBC !important; }
+.racaptable thead tr {
+  background-color: #b8e9ec;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #30435C;
+  border-top: 0;
+  padding: .3125rem .4375rem; }
+
+.racaptable thead tbody {
+  border-top: 0;
+  padding: .3125rem .4375rem;
+  color: #02AFBC !important; }
