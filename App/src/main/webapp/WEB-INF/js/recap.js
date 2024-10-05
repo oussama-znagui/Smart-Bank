@@ -27,13 +27,15 @@
 
 
         recapTable.innerHTML +=
-            `<thead>
+
+            `
+<thead id="creditData">
                 <td>
                    Details de mon credit
                 </td>
                 </thead>
 
-                <tbody class="creditData" id="creditData">
+                <tbody id="creditData2">
 
                    <tr>
                    <td>
@@ -77,7 +79,9 @@
 
     step1.addEventListener("click",(event) =>{
         const creditData = document.getElementById("creditData")
+        const creditData2 = document.getElementById("creditData2")
         creditData.remove()
+        creditData2.remove()
 
 
     })

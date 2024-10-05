@@ -1,7 +1,10 @@
 package ma.znagui.app.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
 
 import java.time.LocalDateTime;
 @Entity
@@ -21,6 +24,18 @@ public class Request {
     private LocalDateTime birthDay;
     private double incomes;
     private Boolean currentCredits;
+
+
+    @ManyToMany
+
+    @JoinTable(
+            name = "request_status",
+            joinColumns = @JoinColumn(name = "request_id"),
+            inverseJoinColumns = @JoinColumn(name = "status_id")
+    )
+    private List<Status> statuses;;
+
+
 
     public Request() {
 
@@ -130,6 +145,12 @@ public class Request {
     }
     public void setCurrentCredits(Boolean currentCredits) {
         this.currentCredits = currentCredits;
+    }
+    public List<Status> getStatuses() {
+        return statuses;
+    }
+    public void setStatuses(List<Status> statuses) {
+        this.statuses = statuses;
     }
 
   
