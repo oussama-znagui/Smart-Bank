@@ -129,7 +129,7 @@
                     </div>
                     <div class="rang-div">
                         <label>Mensualités (en DH)</label>
-                        <input type="number" id="monthly" value="" name="monthly">
+                        <input type="number" id="monthly" name="monthly">
                         <input type="range"  id="monthly-rang" step="any">
                     </div>
                     <div class="bt">
@@ -187,7 +187,7 @@
                             <label class="form__label">CIN</label>
                         </div>
                         <div class="form__group field">
-                            <input type="date" class="form__field" placeholder="Date de naissance" name="bdate" >
+                            <input type="date" class="form__field" placeholder="Date de naissance" name="b-date" >
                             <label class="form__label">Date de naissance</label>
                         </div>
                         <div class="form__group field">
@@ -248,6 +248,19 @@
 
 
 
+    <div class="modal" id="modal">
+       <div>
+           <h1>
+               Attention !!
+           </h1>
+           <button id="closeModal">Fermer</button>
+       </div>
+
+        <p >Veuillez completer les information de votre cresit</p>
+    </div>
+
+
+
 
 
 
@@ -264,6 +277,7 @@
 <script><%@include file="WEB-INF/js/main.js" %></script>
 <script><%@include file="WEB-INF/js/navigation.js" %></script>
 <script><%@include file="WEB-INF/js/recap.js" %></script>
+<script><%@include file="WEB-INF/js/regex.js" %></script>
 </body>
 
 </body>

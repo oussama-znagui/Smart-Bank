@@ -2,13 +2,15 @@ package ma.znagui.app.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
 import java.time.LocalDateTime;
 @Entity
-public class Request {
+public class Request implements Serializable {
     @Id private int id;
     private String project;
     private String pro;
@@ -21,7 +23,7 @@ public class Request {
     private String fistName;
     private String lastName;
     private String cin;
-    private LocalDateTime birthDay;
+    private LocalDate birthDay;
     private double incomes;
     private Boolean currentCredits;
 
@@ -126,10 +128,10 @@ public class Request {
         this.cin = cin;
     }
 
-    public LocalDateTime getBirthDay() {
+    public LocalDate getBirthDay() {
         return birthDay;
     }
-    public void setBirthDay(LocalDateTime birthDay) {
+    public void setBirthDay(LocalDate birthDay) {
         this.birthDay = birthDay;
     }
 

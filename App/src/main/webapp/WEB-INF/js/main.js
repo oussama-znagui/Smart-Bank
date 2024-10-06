@@ -118,17 +118,9 @@ function displayForm(){
     p2.style.display = "none"
     p3.style.display = "none"
 
-    toStep2.addEventListener("click",(event) => {
-        p1.style.display = "none"
-        p2.style.display = "block"
 
-    })
 
-    toStep3.addEventListener("click",(event) => {
-        p2.style.display = "none"
-        p3.style.display = "block"
 
-    })
 }
 
 

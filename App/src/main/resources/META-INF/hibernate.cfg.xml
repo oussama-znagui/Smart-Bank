@@ -5,22 +5,12 @@
 
 <hibernate-configuration>
     <session-factory>
-
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/smartBank</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/smarthBank</property>
         <property name="hibernate.connection.username">postgres</property>
         <property name="hibernate.connection.password">Azerty@</property>
-
-        <! - Other Hibernate properties >
-        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
-        <property name="hibernate.format_sql">true</property>
-
-        <! first time it is create and then onwards update>
-        <property name="hbm2ddl.auto">update</property>
-
-
-        <mapping class="ma.znagui.app.model.Request"/>
-
     </session-factory>
 </hibernate-configuration>

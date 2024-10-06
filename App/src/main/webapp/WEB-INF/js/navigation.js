@@ -18,14 +18,12 @@ document.addEventListener("DOMContentLoaded", function() {
         step1.classList.add("inprogress")
 
 
-
-    toStep2.addEventListener("click",(event) => {
-       step ++
-        step2.classList.add("inprogress")
-        step1.classList.remove("inprogress")
-        step1.classList.add("complited")
-
-    })
+function tonext(){
+    step ++
+    step2.classList.add("inprogress")
+    step1.classList.remove("inprogress")
+    step1.classList.add("complited")
+}
 
     toStep3.addEventListener("click",(event) => {
         step ++
@@ -71,6 +69,29 @@ document.addEventListener("DOMContentLoaded", function() {
             step3.removeAttribute("class")
 
         }
+    })
+
+
+    toStep2.addEventListener("click",(event) => {
+        if(numsRegex()) {
+            p1.style.display = "none"
+            p2.style.display = "block"
+            tonext()
+        }
+
+
+    })
+
+
+    toStep3.addEventListener("click",(event) => {
+        if(telEmailRegex()){
+            p2.style.display = "none"
+            p3.style.display = "block"
+
+        }
+
+
+
 
 
 
