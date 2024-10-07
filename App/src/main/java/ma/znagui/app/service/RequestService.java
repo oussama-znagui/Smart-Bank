@@ -1,7 +1,7 @@
 package ma.znagui.app.service;
 
-import ma.znagui.app.model.Request;
-import ma.znagui.app.model.Status;
+import ma.znagui.app.entities.Request;
+import ma.znagui.app.entities.Status;
 
 import java.util.List;
 

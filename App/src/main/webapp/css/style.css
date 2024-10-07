@@ -90,4 +90,18 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 
+.errors{
+    font-weight: 500;
+    color: #7a0a17;
+    background-color: #fbd0d5;
+    border-color: #f9bdc4;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
 

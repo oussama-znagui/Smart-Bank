@@ -84,7 +84,7 @@ function tonext(){
 
 
     toStep3.addEventListener("click",(event) => {
-        if(telEmailRegex()){
+        if(Regex()){
             p2.style.display = "none"
             p3.style.display = "block"
 

@@ -1,13 +1,20 @@
 package ma.znagui.app.service.imp;
 
-import ma.znagui.app.model.Request;
-import ma.znagui.app.model.Status;
+import ma.znagui.app.dao.RequestDao;
+import ma.znagui.app.dao.imp.RequestDaoImp;
+import ma.znagui.app.entities.Request;
+import ma.znagui.app.entities.Status;
 import ma.znagui.app.service.RequestService;
 
 import java.util.List;
 
 public class RequestServiceImp implements RequestService {
+    private  RequestDao dao = new RequestDaoImp();
     public Request createRequest(Request request) {
+        if (checkCreditValues(request)) {
+            dao.createRequest(request);
+            return request;
+        }
 
         return null;
     }
@@ -37,7 +44,10 @@ public class RequestServiceImp implements RequestService {
         double mVal = a1 / a2pow;
 
       if (monthly == mVal) {
+
           return true;
+
+
       }else {
           return false;
       }

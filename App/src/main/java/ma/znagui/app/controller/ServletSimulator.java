@@ -5,10 +5,10 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import ma.znagui.app.model.Request;
-import ma.znagui.app.model.Request;
+import ma.znagui.app.entities.Request;
 import ma.znagui.app.service.RequestService;
 import ma.znagui.app.service.imp.RequestServiceImp;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -60,7 +60,7 @@ public class ServletSimulator extends HttpServlet {
       myrequest.setIncomes(Double.parseDouble(request.getParameter("revenu")));
       myrequest.setCurrentCredits(Boolean.parseBoolean(request.getParameter("credit")));
 
-
+        requestService.createRequest(myrequest);
 
         PrintWriter out = response.getWriter();
         response.setContentType("text/plain");
@@ -72,7 +72,7 @@ public class ServletSimulator extends HttpServlet {
         out.println("<body>");
         out.println("<h1>Simulator</h1>");
         out.println("<p>");
-        out.println(requestService.checkCreditValues(myrequest));
+        out.println();
         out.println("</p>");
         out.println("</body>");
         out.println("</html>");

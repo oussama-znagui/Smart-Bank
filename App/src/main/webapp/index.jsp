@@ -94,7 +94,7 @@
                 </div>
             </div>
             <form action="${pageContext.request.contextPath}/demande" method="post">
-                <button type="submit" name="submit" >allo</button>
+
 
                 <div class="p1" id="p1">
 
@@ -208,6 +208,7 @@
                         </div>
 
                     </div>
+                    <button type="submit" name="submit" >allo</button>
 
                 </div>
 
@@ -255,8 +256,9 @@
            </h1>
            <button id="closeModal">Fermer</button>
        </div>
+        <div class="errors">
 
-        <p >Veuillez completer les information de votre cresit</p>
+        </div>
     </div>
 
 

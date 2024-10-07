@@ -25,18 +25,50 @@ function numsRegex() {
 }
 
 
+function chekData(elements){
+    return elements.every(el => {
+        console.log(el.value);
+        return el.value !== "";
+    });
 
 
-function telEmailRegex(){
-    let EmailReg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
-    
-    if (!EmailReg.test(email.value)){
+}
+const errors = document.getElementsByClassName("errors")[0]
+
+function Regex(){
+    let arr = []
+    arr.push(email)
+    arr.push(tel)
+    if (!chekData(arr)){
         modal.style.display = "block"
-       // modal.innerHTML += "<p> Email invalid </p>"
-        return false
-    }
+        let errorMessage = document.createElement("p")
 
+           errorMessage.textContent = "veuillez completez toute les infos"
+
+        errors.innerHTML = ""
+        errors.appendChild(errorMessage)
+        return false
+
+    }
     return true
+
+
+    // let EmailReg = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+    // let phoneRex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/
+    // console.log(tel.value)
+    // if (!EmailReg.test(email.value ) || !phoneRex.test(tel.value)){
+    //
+    //     let errorMessage = document.createElement("p")
+    //     errorMessage.classList.add("errorMessage")
+    //     errorMessage.textContent = "Email invalid"
+    //
+    //
+    //
+    //
+    //     return false
+    // }
+    //
+    // return true
 }
 
 
