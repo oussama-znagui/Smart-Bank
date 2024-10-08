@@ -26,10 +26,7 @@ function tonext(){
 }
 
     toStep3.addEventListener("click",(event) => {
-        step ++
-        step3.classList.add("inprogress")
-        step2.classList.remove("inprogress")
-        step2.classList.add("complited")
+
 
     })
 
@@ -87,13 +84,12 @@ function tonext(){
         if(Regex()){
             p2.style.display = "none"
             p3.style.display = "block"
+            step ++
+            step3.classList.add("inprogress")
+            step2.classList.remove("inprogress")
+            step2.classList.add("complited")
 
         }
-
-
-
-
-
 
     })
 

@@ -37,8 +37,9 @@ public class Request implements Serializable {
     @OneToMany(mappedBy = "request")
     private Set<RequestStatus> requestStatus;
 
-
-
+public double getAmount() {
+    return amount;
+}
 
 
 

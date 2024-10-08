@@ -11,11 +11,12 @@ public class EntityManagerFactorySingleton {
 
     }
 
-    public static EntityManagerFactory getEntityManagerFactory() {
+    static {
         if (emf == null) {
+
             emf = Persistence.createEntityManagerFactory("bankPU");
         }
-        return emf;
+
     }
 
 
@@ -26,4 +27,7 @@ public class EntityManagerFactorySingleton {
         }
     }
 
+    public static EntityManagerFactory getEmf() {
+        return emf;
+    }
 }

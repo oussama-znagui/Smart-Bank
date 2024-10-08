@@ -12,7 +12,8 @@ public class RequestServiceImp implements RequestService {
     private  RequestDao dao = new RequestDaoImp();
     public Request createRequest(Request request) {
         if (checkCreditValues(request)) {
-            dao.createRequest(request);
+            Request createdRequest = dao.createRequest(request);
+            addStatusToRequest(createdRequest.getId(),3);
             return request;
         }
 
@@ -20,11 +21,13 @@ public class RequestServiceImp implements RequestService {
     }
 
     public void addStatusToRequest(int requestID, int statusID) {
+        dao.addStatusToRequest(requestID, statusID);
 
     }
 
     public List<Request> getRequests() {
-        return List.of();
+
+      return   dao.getRequests();
     }
 
     public void updateRequestStatus(Request request, Status status) {

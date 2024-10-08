@@ -5,39 +5,77 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import ma.znagui.app.dao.RequestDao;
 import ma.znagui.app.entities.Request;
+import ma.znagui.app.entities.RequestStatus;
 import ma.znagui.app.entities.Status;
 import ma.znagui.app.config.EntityManagerFactorySingleton;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import static ma.znagui.app.config.EntityManagerFactorySingleton.getEntityManagerFactory;
+
 
 public class RequestDaoImp implements RequestDao {
-    EntityManager entityManager = getEntityManagerFactory().createEntityManager();
+    EntityManagerFactory emf = EntityManagerFactorySingleton.getEmf();
 
 
 
     public Request createRequest(Request request) {
+    EntityManager entityManager = emf.createEntityManager();
 
-        EntityTransaction transaction = entityManager.getTransaction();
-        transaction.begin();
-        entityManager.persist(request);
-        transaction.commit();
+        try {
+            EntityTransaction transaction = entityManager.getTransaction();
+            transaction.begin();
+            entityManager.persist(request);
+            transaction.commit();
+            entityManager.close();
+        }catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         return request;
     }
 
     public void addStatusToRequest(int requestID, int statusID) {
-//        Request request = em.find(Request.class, requestID);
-//        Status status = em.find(Status.class, statusID);
-//        request.getStatuses().add(status);
-        
+        EntityManager entityManager = emf.createEntityManager();
+        try {
+            EntityTransaction transaction = entityManager.getTransaction();
+            transaction.begin();
+            Request request = entityManager.find(Request.class, requestID);
+            Status status = entityManager.find(Status.class, statusID);
+            RequestStatus requestStatus = new RequestStatus();
+            requestStatus.setStatus(status);
+            requestStatus.setRequest(request);
+            LocalDateTime now = LocalDateTime.now();
+
+            requestStatus.setDate(now);
+            entityManager.persist(requestStatus);
+            transaction.commit();
+            entityManager.close();
+
+        }catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
 
 
     }
 
     public List<Request> getRequests() {
-        return List.of();
+        EntityManager entityManager = emf.createEntityManager();
+        try {
+            EntityTransaction transaction = entityManager.getTransaction();
+            transaction.begin();
+            List requests = entityManager.createQuery("SELECT r FROM Request r JOIN FETCH r.requestStatus rs JOIN rs.status s").getResultList();
+            transaction.commit();
+            entityManager.close();
+            return requests;
+        }catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+
     }
 
     public void updateRequestStatus(Request request, Status status) {

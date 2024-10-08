@@ -22,9 +22,38 @@ public class RequestStatus implements Serializable {
     @JoinColumn(name="request_id", nullable=false)
     private Request request;
 
+    @ManyToOne
+    @JoinColumn(name="status_id", nullable=false)
+    private Status status;
 
-    private LocalDate date;
+
+    private LocalDateTime date;
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    public void setRequest(Request request) {
+        this.request = request;
+    }
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
 
 
+    public int getId() {
+        return id;
+    }
+    public Request getRequest() {
+        return request;
+    }
+    public Status getStatus() {
+        return status;
+    }
+    public LocalDateTime getDate() {
+        return date;
+    }
 
 }
