@@ -3,9 +3,11 @@ package ma.znagui.app.service.imp;
 import ma.znagui.app.dao.RequestDao;
 import ma.znagui.app.dao.imp.RequestDaoImp;
 import ma.znagui.app.entities.Request;
+import ma.znagui.app.entities.RequestStatus;
 import ma.znagui.app.entities.Status;
 import ma.znagui.app.service.RequestService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RequestServiceImp implements RequestService {
@@ -26,8 +28,27 @@ public class RequestServiceImp implements RequestService {
     }
 
     public List<Request> getRequests() {
+try {
+    List<Request> rqs =  dao.getRequests();
+   rqs.forEach(rq -> {
+       List<RequestStatus> rss = dao.getRequestStatusByID(rq.getId());
 
-      return   dao.getRequests();
+       List<Status> statuses = new ArrayList<>();
+       rss.forEach(sr -> {
+
+
+           statuses.add(sr.getStatus());
+       });
+       rq.setStatuses(statuses);
+
+   });
+    System.out.println("from serviiiiiice " + rqs);
+    return rqs;
+
+}catch (Exception e) {
+    throw new RuntimeException(" requests found aaa" + dao.getRequests());
+}
+
     }
 
     public void updateRequestStatus(Request request, Status status) {
@@ -55,5 +76,9 @@ public class RequestServiceImp implements RequestService {
           return false;
       }
 
+    }
+
+    public List<RequestStatus> getRequestStatusByID(int requestID) {
+        return dao.getRequestStatusByID(requestID);
     }
 }

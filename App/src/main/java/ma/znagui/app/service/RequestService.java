@@ -1,6 +1,7 @@
 package ma.znagui.app.service;
 
 import ma.znagui.app.entities.Request;
+import ma.znagui.app.entities.RequestStatus;
 import ma.znagui.app.entities.Status;
 
 import java.util.List;
@@ -11,4 +12,6 @@ public interface RequestService {
     public List<Request> getRequests();
     public void updateRequestStatus(Request request, Status status);
     public boolean checkCreditValues(Request request);
+    public List<RequestStatus> getRequestStatusByID(int requestID);
+
 }

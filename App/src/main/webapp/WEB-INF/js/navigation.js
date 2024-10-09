@@ -27,7 +27,6 @@ function tonext(){
 
     toStep3.addEventListener("click",(event) => {
 
-
     })
 
 
@@ -57,11 +56,10 @@ function tonext(){
             p2.style.display = "block"
             p3.style.display = "none"
 
-            step1.classList.add("complited")
-            step1.classList.remove("inprogress")
 
-            step1.classList.remove("complited")
-            step1.classList.add("inprogress")
+
+            step2.classList.remove("complited")
+            step2.classList.add("inprogress")
 
             step3.removeAttribute("class")
 
@@ -81,7 +79,7 @@ function tonext(){
 
 
     toStep3.addEventListener("click",(event) => {
-        if(Regex()){
+        if(RegexMailTel()){
             p2.style.display = "none"
             p3.style.display = "block"
             step ++

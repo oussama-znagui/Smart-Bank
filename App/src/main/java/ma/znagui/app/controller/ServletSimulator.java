@@ -53,31 +53,18 @@ public class ServletSimulator extends HttpServlet {
       myrequest.setEmail(request.getParameter("email"));
       myrequest.setPhone(request.getParameter("tel"));
       myrequest.setCivility(request.getParameter("civility"));
-      myrequest.setLastName(request.getParameter("lastname"));
-      myrequest.setFistName(request.getParameter("fistname"));
+      myrequest.setLastName(request.getParameter("lastName"));
+      myrequest.setFistName(request.getParameter("firstName"));
       myrequest.setCin(request.getParameter("cin"));
       myrequest.setBirthDay(LocalDate.parse(request.getParameter("b-date")));
       myrequest.setIncomes(Double.parseDouble(request.getParameter("revenu")));
       myrequest.setCurrentCredits(Boolean.parseBoolean(request.getParameter("credit")));
 
         requestService.createRequest(myrequest);
+        System.out.println(response.getStatus());
 
-        PrintWriter out = response.getWriter();
-        response.setContentType("text/plain");
-        response.setCharacterEncoding("UTF-8");
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Simulator</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Simulator</h1>");
-        out.println("<p>");
-        out.println();
-        out.println("</p>");
-        out.println("</body>");
-        out.println("</html>");
 
-//        requestService.createRequest(myrequest);
+
 
     }
 

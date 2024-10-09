@@ -256,9 +256,13 @@
            </h1>
            <button id="closeModal">Fermer</button>
        </div>
-        <div class="errors">
 
-        </div>
+            <ul class="errors">
+
+
+            </ul>
+
+
     </div>
 
 

@@ -1,12 +1,11 @@
 package ma.znagui.app.entities;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -16,6 +15,8 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Getter
+@Setter
 public class Request implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id private int id;
@@ -23,6 +24,7 @@ public class Request implements Serializable {
     private String project;
     private String pro;
     private double amount;
+
     private int duration;
     private double mountly;
     private String email;
@@ -34,12 +36,13 @@ public class Request implements Serializable {
     private LocalDate birthDay;
     private double incomes;
     private Boolean currentCredits;
-    @OneToMany(mappedBy = "request")
-    private Set<RequestStatus> requestStatus;
+    @Transient
+    private List<Status> statuses;
+//    @OneToMany(mappedBy = "request")
+//    private List<RequestStatus> requestStatus;
 
-public double getAmount() {
-    return amount;
-}
+
+
 
 
 
