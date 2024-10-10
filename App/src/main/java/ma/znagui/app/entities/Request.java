@@ -37,7 +37,7 @@ public class Request implements Serializable {
     private double incomes;
     private Boolean currentCredits;
     @Transient
-    private List<Status> statuses;
+    private List<RequestStatus> requestStatus;
 //    @OneToMany(mappedBy = "request")
 //    private List<RequestStatus> requestStatus;
 

@@ -58,17 +58,26 @@ td {
 
 #creditDataModal{
     position: absolute;
+    display: none;
 
-    background-color: antiquewhite;
+    background: rgb(37,30,155);
+    background: linear-gradient(270deg, rgba(37,30,155,1) 0%, rgba(9,9,121,1) 46%, rgba(39,126,143,1) 100%);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
     border-radius: 1rem;
+
+    width: 70vw;
+
+}
+
+
+.modal_body{
     display: flex;
     justify-content: space-around;
-    width: 70vw;
-}
+margin-top: 2rem}
+
 #creditDataModal form{
     display: flex;
     justify-content: space-around;
@@ -96,6 +105,7 @@ td {
     position: relative;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
     margin-top: 1rem;
 }
@@ -103,3 +113,29 @@ td {
     white-space: nowrap;
     display: block;
 }
+.modal_title{
+    margin: 0; !important;
+    font-weight: bold;
+}
+
+.add_status{
+    background-color: #7aecff;
+    color: black;
+    border: none;
+    height: 100%;
+    border-radius: .5rem;
+    font-weight: bold;
+}
+
+.status_list{
+    list-style: none;
+}
+.status_list li{
+    margin: .5rem 0;
+}
+
+.modal_b{
+
+}
+
+

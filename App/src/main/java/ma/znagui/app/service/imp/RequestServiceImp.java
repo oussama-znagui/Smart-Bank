@@ -15,6 +15,7 @@ public class RequestServiceImp implements RequestService {
     public Request createRequest(Request request) {
         if (checkCreditValues(request)) {
             Request createdRequest = dao.createRequest(request);
+//            System.out.println("from serviiiiiice " + createdRequest.getId());
             addStatusToRequest(createdRequest.getId(),3);
             return request;
         }
@@ -33,16 +34,10 @@ try {
    rqs.forEach(rq -> {
        List<RequestStatus> rss = dao.getRequestStatusByID(rq.getId());
 
-       List<Status> statuses = new ArrayList<>();
-       rss.forEach(sr -> {
-
-
-           statuses.add(sr.getStatus());
-       });
-       rq.setStatuses(statuses);
+       rq.setRequestStatus(rss);
 
    });
-    System.out.println("from serviiiiiice " + rqs);
+//    System.out.println("from serviiiiiice " + rqs);
     return rqs;
 
 }catch (Exception e) {

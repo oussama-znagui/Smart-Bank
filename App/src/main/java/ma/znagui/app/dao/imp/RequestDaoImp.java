@@ -45,9 +45,11 @@ public class RequestDaoImp implements RequestDao {
             EntityTransaction transaction = entityManager.getTransaction();
             transaction.begin();
             Request request = entityManager.find(Request.class, requestID);
+            System.out.println("fromm dao " + request);
             Status status = entityManager.find(Status.class, statusID);
             RequestStatus requestStatus = new RequestStatus();
             requestStatus.setStatus(status);
+            requestStatus.setRequest(request);
             LocalDateTime now = LocalDateTime.now();
 
             requestStatus.setDate(now);
@@ -82,10 +84,11 @@ public class RequestDaoImp implements RequestDao {
                 System.out.println(req);
 
 
-                transaction.commit();
-                entityManager.close();
+
 
             }
+            transaction.commit();
+            entityManager.close();
 
         }catch (Exception e) {
             if(transaction.isActive()) {

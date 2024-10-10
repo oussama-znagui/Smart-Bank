@@ -70,144 +70,163 @@
                     <td>
                         plus
                     </td>
+                    <td>
+                        <div id="creditDataModal">
+                            <button id="modal_b">Fermer</button>
+                            <div class="modal_body">
+                                <div >
+
+                                    <form >
+                                        <div>
+                                            <h1 class="modal_title">Information du credit N° <%=r.getId()%></h1>
+
+                                            <div class="form__group">
+                                                <label>Mon projet</label>
+                                                <select id="project" name="project" class="form__field">
+                                                    <option>J'ai besoin d'argent</option>
+                                                    <option>J'ai besoin d'argent</option>
+                                                    <option>J'ai besoin d'argent</option>
+                                                    <option>J'ai besoin d'argent</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form__group" >
+                                                <label>Je suis</label>
+                                                <select id="pro" name="pro" class="form__field">
+                                                    <option>Artisan</option>
+                                                    <option>Artisan</option>
+                                                    <option>JArtisan</option>
+                                                    <option>JArtisan</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="rang-div form__group">
+                                                <label>Montant (en DH)</label>
+                                                <input type="number" id="amount" class="form__field" name="amount" max="600000" min="5000"  >
+                                            </div>
+
+                                            <div class="rang-div form__group">
+                                                <label>Durée (en mois)</label>
+                                                <input type="number" id="duration" class="form__field" name="duration"  min="12" max="120">
+                                            </div>
+
+                                            <div class="rang-div form__group">
+                                                <label>Mensualités (en DH)</label>
+                                                <input type="number" id="monthly" class="form__field" name="monthly">
+
+                                            </div>
+
+
+
+
+
+
+                                            <div class="form__group field">
+                                                <label class="form__label">Email</label>
+                                                <input type="email" name="email" class="form__field" placeholder="email" >
+
+                                            </div>
+                                            <div class="form__group field">
+                                                <label  class="form__label"> Téléphone mobile*</label>
+                                                <input type="tel" name="tel" class="form__field" placeholder="tel" >
+
+                                            </div>
+                                        </div>
+
+
+
+                                        <div>
+
+                                            <div class="form__group field">
+                                                <label class="form__label">Civilité</label>
+                                                <input type="radio" name="civility" value="Madame">
+                                                <label>
+                                                    Madame
+                                                </label>
+                                                <input type="radio" name="civility" value="Mademoiselle">
+                                                <label>Mademoiselle
+                                                </label>
+                                                <input type="radio" name="civility" value="Monsieur">
+                                                <label>Monsieur
+                                                </label>
+
+                                            </div>
+                                            <div class="form__group field">
+                                                <label class="form__label">Nom</label>
+                                                <input type="text" class="form__field" placeholder="Nom" name="lastName">
+
+                                            </div>
+                                            <div class="form__group field">
+                                                <label class="form__label">Prenom</label>
+                                                <input type="text" class="form__field" placeholder="Prenom" name="firstName">
+
+                                            </div>
+                                            <div class="form__group field">
+                                                <label class="form__label">CIN</label>
+                                                <input type="text" class="form__field" placeholder="CIN" name="cin" >
+
+                                            </div>
+                                            <div class="form__group field">
+                                                <label class="form__label">Date de naissance</label>
+                                                <input type="date" class="form__field" placeholder="Date de naissance" name="b-date" >
+
+                                            </div>
+                                            <di class="form__group field">
+                                                <label class="form__label">Revenu</label>
+                                                <input type="number" class="form__field" placeholder="Revenu" name="revenu" >
+
+                                            </di>
+                                            <div class="form__group field">
+
+                                                <label class="form__label">Avez vous des crédits en cours ?</label>
+                                                <input name="credit" type="radio" class=""  value="true">
+                                                <label>oui</label>
+                                                <input name="credit" type="radio" class=""  value="false">
+                                                <label>non</label>
+                                            </div>
+
+
+
+                                            <button type="submit" name="submit" >allo</button>
+                                        </div>
+
+                                    </form>
+
+
+                                </div>
+                                <div>
+                                    <h1>Historique de Status</h1>
+                                    <ul class="status_list">
+                                        <li>En cours | 24/01/2024 12:30</li>
+                                        <li>Anulé | 26/01/2024 12:30</li>
+                                    </ul>
+                                    <form>
+                                        <div class="form__group" >
+                                            <label>Status</label>
+                                            <select  name="pro" class="form__field">
+                                                <option>Artisan</option>
+                                                <option>Artisan</option>
+                                                <option>JArtisan</option>
+                                                <option>JArtisan</option>
+                                            </select>
+                                            <input type="submit" value="modifier" class="add_status">
+                                        </div>
+
+
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
+
             <%} %>
             </tbody>
         </table>
     </div>
-    <div id="creditDataModal">
-        <div>
-
-            <form >
-                <div>
-                <h1>Information du credit</h1>
-
-                    <div class="form__group">
-                        <label>Mon projet</label>
-                        <select id="project" name="project" class="form__field">
-                            <option>J'ai besoin d'argent</option>
-                            <option>J'ai besoin d'argent</option>
-                            <option>J'ai besoin d'argent</option>
-                            <option>J'ai besoin d'argent</option>
-                        </select>
-                    </div>
-
-                    <div class="form__group" >
-                        <label>Je suis</label>
-                        <select id="pro" name="pro" class="form__field">
-                            <option>Artisan</option>
-                            <option>Artisan</option>
-                            <option>JArtisan</option>
-                            <option>JArtisan</option>
-                        </select>
-                    </div>
-
-                    <div class="rang-div form__group">
-                        <label>Montant (en DH)</label>
-                        <input type="number" id="amount" class="form__field" name="amount" max="600000" min="5000"  >
-                    </div>
-
-                    <div class="rang-div form__group">
-                        <label>Durée (en mois)</label>
-                        <input type="number" id="duration" class="form__field" name="duration"  min="12" max="120">
-                    </div>
-
-                    <div class="rang-div form__group">
-                        <label>Mensualités (en DH)</label>
-                        <input type="number" id="monthly" class="form__field" name="monthly">
-
-                    </div>
 
 
-
-
-
-
-                    <div class="form__group field">
-                        <label class="form__label">Email</label>
-                        <input type="email" name="email" class="form__field" placeholder="email" >
-
-                    </div>
-                    <div class="form__group field">
-                        <label  class="form__label"> Téléphone mobile*</label>
-                        <input type="tel" name="tel" class="form__field" placeholder="tel" >
-
-                    </div>
-                </div>
-
-
-
-<div>
-
-                        <div class="form__group field">
-                            <label class="form__label">Civilité</label>
-                            <input type="radio" name="civility" value="Madame">
-                            <label>
-                                Madame
-                            </label>
-                            <input type="radio" name="civility" value="Mademoiselle">
-                            <label>Mademoiselle
-                            </label>
-                            <input type="radio" name="civility" value="Monsieur">
-                            <label>Monsieur
-                            </label>
-
-                        </div>
-                        <div class="form__group field">
-                            <label class="form__label">Nom</label>
-                            <input type="text" class="form__field" placeholder="Nom" name="lastName">
-
-                        </div>
-                        <div class="form__group field">
-                            <label class="form__label">Prenom</label>
-                            <input type="text" class="form__field" placeholder="Prenom" name="firstName">
-
-                        </div>
-                        <div class="form__group field">
-                            <label class="form__label">CIN</label>
-                            <input type="text" class="form__field" placeholder="CIN" name="cin" >
-
-                        </div>
-                        <div class="form__group field">
-                            <label class="form__label">Date de naissance</label>
-                            <input type="date" class="form__field" placeholder="Date de naissance" name="b-date" >
-
-                        </div>
-                        <di class="form__group field">
-                            <label class="form__label">Revenu</label>
-                            <input type="number" class="form__field" placeholder="Revenu" name="revenu" >
-
-                        </di>
-                        <div class="form__group field">
-
-                            <label class="form__label">Avez vous des crédits en cours ?</label>
-                            <input name="credit" type="radio" class=""  value="true">
-                            <label>oui</label>
-                            <input name="credit" type="radio" class=""  value="false">
-                            <label>non</label>
-                        </div>
-
-
-
-                    <button type="submit" name="submit" >allo</button>
-</div>
-
-            </form>
-
-
-        </div>
-        <div>
-            <h1>Historique de Status</h1>
-            <ul>
-                <li>En cours | 24/01/2024 12:30</li>
-                <li>Anulé | 26/01/2024 12:30</li>
-            </ul>
-            <form>
-                
-            </form>
-
-        </div>
-    </div>
 </main>
 
 
