@@ -119,7 +119,7 @@ public class RequestDaoImp implements RequestDao {
         try{
 
             transaction.begin();
-            TypedQuery<RequestStatus> query = em.createQuery("SELECT rs FROM RequestStatus rs JOIN FETCH rs.status", RequestStatus.class);
+            TypedQuery<RequestStatus> query = em.createQuery("SELECT rs FROM RequestStatus rs JOIN FETCH rs.status WHERE rs.request.id = " + requestID, RequestStatus.class);
             requestStatuses = query.getResultList();
             System.out.println(requestStatuses);
             transaction.commit();

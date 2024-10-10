@@ -37,9 +37,7 @@
                     <th>
                         Phone
                     </th>
-                    <th>
-                        Status
-                    </th>
+
                     <th>
                         Action
                     </th>
@@ -53,10 +51,10 @@
                         <%=r.getFistName() + " " + r.getLastName()%>
                     </td>
                     <td>
-                        <%=r.getAmount()%>
+                        <%=r.getAmount()%> DHS
                     </td>
                     <td>
-                        <%=r.getDuration()%>
+                        <%=r.getDuration()%> Mois
                     </td>
                     <td>
                         <%=r.getEmail()%>
@@ -64,15 +62,13 @@
                     <td>
                         <%=r.getPhone()%>
                     </td>
+
                     <td>
-<%--                        <%  r.getRequestStatus().toString() ;%>--%>
+                        <button id="b-<%=r.getId()%>">plus</button>
                     </td>
                     <td>
-                        plus
-                    </td>
-                    <td>
-                        <div id="creditDataModal">
-                            <button id="modal_b">Fermer</button>
+                        <div class="creditDataModal" id="m-<%=r.getId()%>">
+                            <button id="f-<%=r.getId()%>">fermer</button>
                             <div class="modal_body">
                                 <div >
 
@@ -82,7 +78,7 @@
 
                                             <div class="form__group">
                                                 <label>Mon projet</label>
-                                                <select id="project" name="project" class="form__field">
+                                                <select id="project" name="project" class="form__field" >
                                                     <option>J'ai besoin d'argent</option>
                                                     <option>J'ai besoin d'argent</option>
                                                     <option>J'ai besoin d'argent</option>
@@ -102,17 +98,17 @@
 
                                             <div class="rang-div form__group">
                                                 <label>Montant (en DH)</label>
-                                                <input type="number" id="amount" class="form__field" name="amount" max="600000" min="5000"  >
+                                                <input type="number" id="amount" class="form__field" name="amount" max="600000" min="5000" value="<%=r.getAmount()%>"  >
                                             </div>
 
                                             <div class="rang-div form__group">
                                                 <label>Durée (en mois)</label>
-                                                <input type="number" id="duration" class="form__field" name="duration"  min="12" max="120">
+                                                <input type="number" id="duration" class="form__field" name="duration"  min="12" max="120" value="<%=r.getDuration()%>">
                                             </div>
 
                                             <div class="rang-div form__group">
                                                 <label>Mensualités (en DH)</label>
-                                                <input type="number" id="monthly" class="form__field" name="monthly">
+                                                <input type="number" id="monthly" class="form__field" name="monthly" value="<%=r.getMountly()%>">
 
                                             </div>
 
@@ -123,12 +119,12 @@
 
                                             <div class="form__group field">
                                                 <label class="form__label">Email</label>
-                                                <input type="email" name="email" class="form__field" placeholder="email" >
+                                                <input type="email" name="email" class="form__field" placeholder="email"  value="<%=r.getEmail()%>">
 
                                             </div>
                                             <div class="form__group field">
                                                 <label  class="form__label"> Téléphone mobile*</label>
-                                                <input type="tel" name="tel" class="form__field" placeholder="tel" >
+                                                <input type="tel" name="tel" class="form__field" placeholder="tel" value="<%=r.getPhone()%>" >
 
                                             </div>
                                         </div>
@@ -138,8 +134,8 @@
                                         <div>
 
                                             <div class="form__group field">
-                                                <label class="form__label">Civilité</label>
-                                                <input type="radio" name="civility" value="Madame">
+                                                <label class="form__label"></label>
+                                                <input type="radio" name="civility" value="Madame" checked>
                                                 <label>
                                                     Madame
                                                 </label>
@@ -153,27 +149,27 @@
                                             </div>
                                             <div class="form__group field">
                                                 <label class="form__label">Nom</label>
-                                                <input type="text" class="form__field" placeholder="Nom" name="lastName">
+                                                <input type="text" class="form__field" placeholder="Nom" name="lastName" value="<%=r.getLastName()%>">
 
                                             </div>
                                             <div class="form__group field">
                                                 <label class="form__label">Prenom</label>
-                                                <input type="text" class="form__field" placeholder="Prenom" name="firstName">
+                                                <input type="text" class="form__field" placeholder="Prenom" name="firstName" value="<%=r.getFistName()%>">
 
                                             </div>
                                             <div class="form__group field">
                                                 <label class="form__label">CIN</label>
-                                                <input type="text" class="form__field" placeholder="CIN" name="cin" >
+                                                <input type="text" class="form__field" placeholder="CIN" name="cin" value="<%=r.getCin()%>" >
 
                                             </div>
                                             <div class="form__group field">
                                                 <label class="form__label">Date de naissance</label>
-                                                <input type="date" class="form__field" placeholder="Date de naissance" name="b-date" >
+                                                <input type="date" class="form__field" placeholder="Date de naissance" name="b-date" value="<%=r.getBirthDay()%>" >
 
                                             </div>
                                             <di class="form__group field">
                                                 <label class="form__label">Revenu</label>
-                                                <input type="number" class="form__field" placeholder="Revenu" name="revenu" >
+                                                <input type="number" class="form__field" placeholder="Revenu" name="revenu" value="<%=r.getIncomes()%>" >
 
                                             </di>
                                             <div class="form__group field">
@@ -197,8 +193,18 @@
                                 <div>
                                     <h1>Historique de Status</h1>
                                     <ul class="status_list">
-                                        <li>En cours | 24/01/2024 12:30</li>
-                                        <li>Anulé | 26/01/2024 12:30</li>
+
+                                        <% List<RequestStatus> rss = r.getRequestStatus(); %>
+                                        <%for (RequestStatus rs : rss){%>
+
+
+                                        <li>
+                                            <%= rs.getStatus().getStatus() + "|" + rs.getDate()%>
+
+                                        </li>
+                                        <%
+                                         }
+                                     %>
                                     </ul>
                                     <form>
                                         <div class="form__group" >
@@ -229,6 +235,7 @@
 
 </main>
 
+<script><%@include file="../js/admin.js" %></script>
 
 </body>
 </html>
