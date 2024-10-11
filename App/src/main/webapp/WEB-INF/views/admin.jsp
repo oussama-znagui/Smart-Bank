@@ -17,8 +17,23 @@
 </head>
 <body>
 <main>
-    <div><h1 class="m-t">List des Demandes de credit</h1></div>
+    <div class="filter_cont">
+        <h1 class="m-t">List des Demandes de credit</h1>
+        <form class="filter_form">
+            <input type="date" name="">
+
+            <select>
+                <option>All</option>
+                <option value="1">Annulé</option>
+                <option value="2">Approuvé</option>
+                <option value="3">En cours de traitement</option>
+
+            </select>
+            <input type="submit" value="Filter" name="filter">
+        </form></div>
+
     <div class="table-cont">
+
         <table class="admin-table">
             <thead>
                 <tr>

@@ -137,6 +137,44 @@ margin-top: 2rem}
 
 }
 
+.filter_form{
+
+
+
+}
+
+.filter_form select{
+    height: 2rem;
+
+}
+.filter_form input[type=submit] {
+    height: 2rem;
+    background-color: #8aff80;
+    border: none;
+    width: 7rem;
+
+}
+
+.filter_form input[type=date] {
+    height: 2rem;
+}
+
+.filter_cont{
+    background-color: #c3ffa9;
+
+    border-radius: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1rem;
+    padding: 0 2rem;
+
+}
+
+
+
 
 
 
