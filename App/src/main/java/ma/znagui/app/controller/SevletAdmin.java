@@ -24,26 +24,21 @@ public class SevletAdmin  extends HttpServlet {
 
 
         request.setAttribute("requests", requests);
-
-//        PrintWriter out = response.getWriter();
-//        response.setContentType("text/plain");
-//        response.setCharacterEncoding("UTF-8");
-//        out.println("<html>");
-//        out.println("<head>");
-//        out.println("<title>Simulator</title>");
-//        out.println("</head>");
-//        out.println("<body>");
-//        out.println("<h1>Simulator</h1>");
-//        out.println("<p>");
-//        out.println(requests.size());
-//        out.println("</p>");
-//        out.println("</body>");
-//        out.println("</html>");
-
-
-
         String path = "/WEB-INF/views/admin.jsp";
         this.getServletContext().getRequestDispatcher(path).forward(request, response);
+    }
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(request.getParameter("addStatus") != null) {
+            int StatusId = Integer.parseInt(request.getParameter("status"));
+            int RequestId = Integer.parseInt(request.getParameter("requestId"));
+            requestService.addStatusToRequest(RequestId,StatusId);
+        }
+
+
+        doGet(request, response);
+
     }
 
 }

@@ -206,16 +206,18 @@
                                          }
                                      %>
                                     </ul>
-                                    <form>
+                                    <form method="post" action="/admin">
                                         <div class="form__group" >
                                             <label>Status</label>
-                                            <select  name="pro" class="form__field">
-                                                <option>Artisan</option>
-                                                <option>Artisan</option>
-                                                <option>JArtisan</option>
-                                                <option>JArtisan</option>
+                                                <select  name="status" class="form__field">
+                                                <option value="1">Annulé</option>
+                                                <option value="2">Approuvé</option>
+                                                <option value="3">En cours de traitement</option>
+
                                             </select>
-                                            <input type="submit" value="modifier" class="add_status">
+                                            <input type="text" value="<%=r.getId()%>" name="requestId" style="display: none">
+
+                                            <input type="submit" value="modifier" name="addStatus" class="add_status">
                                         </div>
 
 
